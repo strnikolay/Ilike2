@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
                                 <div className="col-lg-12 col-md-12 col-sm-6 col-xs-6 col-xm-12">
                                     <div className="footer_head margin-top">Доставляем</div>
                                     <div className="delivery_wrapper">
-                                        <Image src="/delivery/ems.jpg" fill  alt="" title=""/>
+                                        <Image src="/delivery/ems.jpg" alt="" title=""/>
                                         <Image src="/delivery/pecom.jpg"  alt="" title=""/>
                                         <Image src="/delivery/del-line.jpg" alt="" title=""/>
                                         <Image src="/delivery/sdek.jpg" alt="" title=""/>
