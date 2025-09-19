@@ -1,0 +1,232 @@
+   
+
+.logo {
+    position: relative;
+    width: 29rem;
+    height: 7.5rem;
+    background-image: url('../../../public/header/logo.png');
+    background-size: contain;
+}
+
+
+
+.search {
+    border: 0.4rem #fff;
+    background-color: #e2e2e2 ;
+    width: 33%;
+    height: 4.5rem;
+    border-radius: 1rem;
+    flex-grow: 1;
+    margin: 0 2rem;
+    padding-left: 2rem;
+    box-shadow: inset 1px 1px 5px #bbb, 1px 1px 5px #454545bb, -5px -5px 15px #ffffffe4;
+}
+
+.search:focus-visible {
+    border: 4px #ffffff;
+    outline: 0;
+    box-shadow: inset 3px 3px 10px #bbb, 3px 3px 5px #454545bb;
+}
+
+
+
+.contact-wrapper {
+    display: flex;
+}
+
+.contact-content{
+    position: relative;
+   display: flex;
+   flex-direction: column;
+}
+
+.phone-number {
+    color: #4AB7AE;
+    display: flex;
+    font-size: 2.2rem;
+}
+
+.grey-arrow-down {
+    width: 1.5rem;
+    height: 1rem;
+    background-image: url(../../../public/grey-arrow-down.svg);
+    background-repeat: no-repeat; 
+}
+
+.phone-icon {
+    width: 5rem;
+    height: 5rem;
+    background-image: url(../../../public/fone-icon.svg);
+    background-repeat: no-repeat;    
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    background-color: #fff;
+    width: 23rem;
+    color: #777;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 25px;
+    box-shadow: 2px 2px 10px #424242;
+    z-index: 2;
+
+    img {
+        width: 1.5rem;
+        margin-right: 0.3rem;
+    }
+}
+
+.cart-wrap {
+    margin-left: 1rem;
+}
+
+
+.category {
+    width: 29rem;
+    height: 4.2rem;
+    background: -webkit-linear-gradient(top, #4AB7AE 0%, #3C948D 100%);
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.category-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: Cuprum;
+}
+
+.burger {
+    width: 2rem;
+    height: 2rem;
+    background: url(../../../public/burger.svg) no-repeat;
+ 
+}
+
+nav {
+    display: flex;
+    /*width: 40rem;*/
+    flex-grow: 1;
+    margin: 0 2rem;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        li {
+            flex-grow: 1;
+            font-family: Cuprum;
+            font-size: 1.6rem;
+            position: relative;
+            padding: 1rem 0.5rem;
+
+
+
+            &:hover {
+                color: #fff;
+                background-color: #3C948D;
+                ul {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+}
+
+.hasdropdown ul {
+    background-color: #3C948D;
+    width: 24.5rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    color: #fff;
+    z-index: 2;
+    border-radius: 0 5px 5px 5px;
+    box-shadow: 7px 7px 10px #000000a0;
+
+    li {
+        height: 4rem;
+        padding: 5px;
+        border-bottom: 1px solid #fff;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+
+.login-wrap {
+    width: 29rem;
+    height: 4.2rem;
+    display: flex;
+    
+}
+
+.logout {
+    min-width: 4.2rem;
+    height: 4.2rem; 
+    border-radius: 0.5rem;
+    background: -webkit-linear-gradient(top, #4AB7AE 0%, #3C948D 100%);
+}
+
+.login, .profile {
+    width: 100%;
+    margin-left: 1rem;
+    height: 4.2rem;
+    background: -webkit-linear-gradient(top, #4AB7AE 0%, #3C948D 100%);
+    border-radius: 0.5rem;
+    color: #fff
+}
+
+
+@media screen and (max-width: 1024px) {
+    .logo {
+        width: 21.17rem;
+        height: 6.25rem;
+    }
+
+	nav {
+        ul {
+            li {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .category, .login-wrap {
+    width: 21.17rem;
+    height: 3.5rem;
+    }
+
+    .phone-icon {
+        width: 4.17rem;
+        height: 4.17rem;  
+    }
+
+    .phone-number {
+        font-size: 2.0rem;
+    }
+
+    .openrecall {
+        font-size: 1.4rem;
+    }
+}
+  
+@media screen and (max-width: 767px) {
+	
+}
+  
+@media screen and (max-width: 500px) {
+	
+}

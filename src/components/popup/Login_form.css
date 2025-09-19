@@ -1,0 +1,226 @@
+.login-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  font-family: Cuprum;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    -webkit-transition: opacity .5s ease-in-out;
+       -moz-transition: opacity .5s ease-in-out;
+        -ms-transition: opacity .5s ease-in-out;
+         -o-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+}
+
+.login-wrapper .background {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000cb;
+}
+
+.divshadow {
+    width: 450px;
+    opacity: 1;
+    position: absolute;
+    text-align: left;
+    z-index: 102;
+    background: #ffffff;
+    border: 2px solid #c4c4c4;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
+    padding: 0 10px 15px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    text-align: center; 
+}
+
+h3 i {
+    display: inline-block;
+    height: 2px;
+    padding-top: 12px;
+    position: relative;
+    top: 8px;
+    width: 50px;
+    border-top: 1px solid #adadad;
+    margin: 0px 12px;
+}  
+
+.login-wrapper .text {
+  margin: 20px 0;
+  display: flex;
+}
+
+.login-wrapper .text img {
+    margin-right: 15px;
+}
+
+.input-group {
+    height: 40px;
+    display: flex;
+    margin: 15px;
+}
+
+.button-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.form-control {
+    width: 100%;
+    border: 1px solid #4ab7ae;
+    border-radius: 0 10px 10px 0;
+}
+
+.user {
+    height: 100%;
+    width: 40px;
+    background-image: url("../../../public/login/user.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #4ab7ae;
+    border-radius: 10px 0 0 10px;
+}
+
+.pass {
+    height: 100%;
+    width: 40px;
+    background-image: url("../../../public/login/password.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #4ab7ae;
+    border-radius: 10px 0 0 10px;
+}
+
+.btn-submit {
+    border: 0;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    background-color: 4ab7ae;
+    background-color: #4ab7ae; 
+    border-radius: 10px;
+}
+
+.divshadow .close {    
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 9;
+    border:0;
+    background-image: url("../../../public/login/x.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-footer {
+    display: flex;
+}
+
+.plus_btn {
+    width: 20px;
+    height: 20px;
+    background-image: url("../../../public/login/plus-square.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right:  10px;
+}
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceIn {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@-webkit-keyframes bounceOut {
+  20% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  50%, 55% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+}
+
+@keyframes bounceOut {
+  20% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  50%, 55% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+}
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
