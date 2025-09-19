@@ -57,13 +57,13 @@ export const Footer: React.FC = () => {
                                     <div className="footer_head">Мы в соцсетях</div>
                                     <div className="social_img">
                                         <Link href="https://t.me/+FqtDNFUZco41OTIy">
-										     <Image src="/soc/tg.svg" fill alt=""/>
+										     <Image src="/soc/tg.svg" alt=""/>
                                         </Link>
                                         <Link href="https://vk.com/ilikeopt">
-                                        <Image fill
+                                        <Image 
                                                 src="/soc/vk.svg"
                                                 alt=""/></Link>
-                                        <Link href="https://www.instagram.com/ilike_belio_opt/"><Image fill
+                                        <Link href="https://www.instagram.com/ilike_belio_opt/"><Image 
                                                 src="/soc/inst.svg"
                                                 alt=""/></Link>
                                         <Link href="https://vm.tiktok.com/TSFxYb/"><Image

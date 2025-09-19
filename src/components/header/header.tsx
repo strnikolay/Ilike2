@@ -34,23 +34,23 @@ export const Header: React.FC = observer(() => {
 
 					{dropdown&&<div className="dropdown-menu">
 						<p>
-							<Image src="/megafon.png" fill alt=""/>
+							<Image src="/megafon.png" alt=""/>
 							<span>+7(925) 518-77-67 -	АйЛайк</span>
 						</p>
 						<p>
-							<Image src="/megafon.png" fill alt=""/>
+							<Image src="/megafon.png" alt=""/>
 							<span>+7(926) 775-96-22 - Федор	Власов, куратор отдела продаж</span>
 						</p>
 						<p>
-							<Image src="/telefon.png" fill alt=""/>
+							<Image src="/telefon.png" alt=""/>
 							<span className="dropdown-phones">+7(925) 090-00-10</span>
 						</p>
 						<p>
-							<Image src="/telefon.png" fill alt=""/>
+							<Image src="/telefon.png" alt=""/>
 							<span className="dropdown-phones">+7(925) 090-33-38</span>
 						</p>
 						<p>
-							<Image src="/telefon.png" fill alt=""/>
+							<Image src="/telefon.png" alt=""/>
 							<span className="dropdown-phones">+7(495) 518-77-67</span>
 						</p>
 						... или

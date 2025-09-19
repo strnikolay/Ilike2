@@ -29,7 +29,7 @@ const Product_card: React.FC<Props> = ({el, index}) => {
         </div>
         <div className="image relative">
             <div className="images-add">
-                <Image src={el.img[0]} fill alt="" className="img-responsive"/>
+                <Image src={el.img[0]} alt="" className="img-responsive"/>
             </div>
             <div className="sticker">Хит</div>
             <div className="add-to-cart"></div>

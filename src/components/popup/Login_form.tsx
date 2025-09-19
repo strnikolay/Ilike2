@@ -21,7 +21,7 @@ export default function LoginForm () {
 			<h3><i></i> Войти / Зарегистрироваться <i></i></h3>
 				 
 			<div className="text">
-					<Image src="/login/loginicon.png" fill alt="" title=""/>
+					<Image src="/login/loginicon.png" alt="" title=""/>
 					<div>
 						Войдите в личный кабинет, используя логин и пароль, указанный во время регистрации, или зарегистрируйтесь, если вы новый клиент.
 					</div>

@@ -19,7 +19,7 @@ export const Poster: React.FC = () => {
                             <div className="owl-item">
                                 <div className="item">
                                     <Link href="https://online.fliphtml5.com/ggqrf/wsit/#p=1">
-                                        <Image src="/poster/poster_1.png" fill alt="каталог 2023" className="img-responsive"/>
+                                        <Image src="/poster/poster_1.png" alt="каталог 2023" className="img-responsive"/>
                                     </Link>
                                 </div>
                             </div>
@@ -27,28 +27,28 @@ export const Poster: React.FC = () => {
                             <div className="owl-item">
                                 <div className="item">
                                     <a href="https://ilikeopt.ru/contacts">
-									<Image src="/poster/poster_2.png" fill alt="бизнес с нами" className="img-responsive"/>
+									<Image src="/poster/poster_2.png" alt="бизнес с нами" className="img-responsive"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="owl-item">
                                 <div className="item">
                                     <a href="https://ilikeopt.ru/bustgaltery/bolshie-razmery/">
-                                    <Image src="/poster/poster_3.png" fill alt="гиганты" className="img-responsive"/>
+                                    <Image src="/poster/poster_3.png" alt="гиганты" className="img-responsive"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="owl-item" >
                                 <div className="item">
                                     <a href="https://ilikeopt.ru/ilike">
-                                    <Image src="/poster/poster_1.png" fill alt="от производителя" className="img-responsive"/>
+                                    <Image src="/poster/poster_1.png" alt="от производителя" className="img-responsive"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="owl-item">
                                 <div className="item">
                                     <a href="https://ilikeopt.ru/0513-aylayk-trusy">
-                                    <Image src="/poster/poster_2.png" fill alt="513 биг сайз" className="img-responsive"/>
+                                    <Image src="/poster/poster_2.png" alt="513 биг сайз" className="img-responsive"/>
                                     </a>
                                 </div>
                             </div>
