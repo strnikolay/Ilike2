@@ -57,28 +57,27 @@ export const Footer: React.FC = () => {
                                     <div className="footer_head">Мы в соцсетях</div>
                                     <div className="social_img">
                                         <Link href="https://t.me/+FqtDNFUZco41OTIy">
-										     <Image src="/soc/tg.svg" alt=""/>
+										     <Image src="/soc/tg.svg" width={50} height={50} alt=""/>
                                         </Link>
                                         <Link href="https://vk.com/ilikeopt">
-                                        <Image 
-                                                src="/soc/vk.svg"
-                                                alt=""/></Link>
-                                        <Link href="https://www.instagram.com/ilike_belio_opt/"><Image 
-                                                src="/soc/inst.svg"
-                                                alt=""/></Link>
-                                        <Link href="https://vm.tiktok.com/TSFxYb/"><Image
-                                                src="/soc/tiktok.svg"
-                                                alt=""/></Link>
+                                            <Image src="/soc/vk.svg" width={50} height={50} alt=""/>
+                                        </Link>
+                                        <Link href="https://www.instagram.com/ilike_belio_opt/">
+                                            <Image src="/soc/inst.svg" width={50} height={50} alt=""/>
+                                        </Link>
+                                        <Link href="https://vm.tiktok.com/TSFxYb/">
+                                            <Image src="/soc/tiktok.svg" width={50} height={50} alt=""/>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-12 col-md-12 col-sm-6 col-xs-6 col-xm-12">
                                     <div className="footer_head margin-top">Доставляем</div>
                                     <div className="delivery_wrapper">
-                                        <Image src="/delivery/ems.jpg" alt="" title=""/>
-                                        <Image src="/delivery/pecom.jpg"  alt="" title=""/>
-                                        <Image src="/delivery/del-line.jpg" alt="" title=""/>
-                                        <Image src="/delivery/sdek.jpg" alt="" title=""/>
-                                        <Image src="/delivery/pochta.jpg" alt="" title=""/>
+                                        <Image src="/delivery/ems.jpg" width={50} height={50} alt="" title=""/>
+                                        <Image src="/delivery/pecom.jpg" width={50} height={50} alt="" title=""/>
+                                        <Image src="/delivery/del-line.jpg" width={50} height={50} alt="" title=""/>
+                                        <Image src="/delivery/sdek.jpg" width={50} height={50} alt="" title=""/>
+                                        <Image src="/delivery/pochta.jpg" width={50} height={50} alt="" title=""/>
                                     </div>
                                 </div>
                             </div>

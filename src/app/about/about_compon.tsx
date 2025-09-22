@@ -9,7 +9,7 @@ export const About: React.FC = () => {
     <div className="about-wrapper container">
 
             <div className="about-item">
-                <Image src="/about/ico_about1.png" alt=""/>
+                <Image src="/about/ico_about1.png" width={50} height={50} alt=""/>
                 <div className="about-content">              
                   <div className="about-title">15 ЛЕТ</div>
                   <div className="about-text" >
@@ -20,7 +20,7 @@ export const About: React.FC = () => {
 
 
             <div className="about-item">
-                <Image src="/about/ico_about2.png" alt=""/>
+                <Image src="/about/ico_about2.png" width={50} height={50} alt=""/>
                 <div className="about-content">   
                   <div className="about-title">5 ЛЕТ</div>
                   <div className="about-text">
@@ -31,7 +31,7 @@ export const About: React.FC = () => {
 
 
             <div className="about-item">
-                <Image src="/about/ico_about3.png" alt=""/>
+                <Image src="/about/ico_about3.png" width={50} height={50} alt=""/>
                 <div className="about-content"> 
                   <div className="about-title">XXL</div>
                   <div className="about-text">
@@ -42,7 +42,7 @@ export const About: React.FC = () => {
 
 
             <div className="about-item">
-                <Image src="/about/ico_about4.png" alt=""/>
+                <Image src="/about/ico_about4.png" width={50} height={50} alt=""/>
 
                 <div className="about-content">              
                   <div className="about-title">1300+ КЛИЕНТОВ</div>

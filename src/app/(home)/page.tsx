@@ -15,7 +15,7 @@ const Home = () => {
   const {Store} = useStore()
 
   useEffect (()=>{
-    console.log(Store.isAuth)
+    /*console.log(Store.isAuth)*/
   },[Store])
 
   return (

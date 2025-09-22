@@ -3,7 +3,13 @@ import type { NextConfig } from "next";
 //const Webpack = require('webpack');
 
 const nextConfig:NextConfig = {
- 
+   
+}
+
+module.exports = {
+  images: {
+    remotePatterns: [new URL('http://localhost:3000/**')],
+  },
 }
 
 /*interface Props {

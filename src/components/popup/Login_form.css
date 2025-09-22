@@ -6,62 +6,87 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    -webkit-transition: opacity .5s ease-in-out;
+  /*  -webkit-transition: opacity .5s ease-in-out;
        -moz-transition: opacity .5s ease-in-out;
         -ms-transition: opacity .5s ease-in-out;
          -o-transition: opacity .5s ease-in-out;
             transition: opacity .5s ease-in-out;
-}
+  */
 
-.login-wrapper .background {
-  position: fixed;
-  z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000cb;
-}
+  .background {
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000cb;
+  }
 
-.divshadow {
-    width: 450px;
+  .divshadow {
+    width: 40rem;
     opacity: 1;
     position: absolute;
-    text-align: left;
     z-index: 102;
     background: #ffffff;
-    border: 2px solid #c4c4c4;
-    border-radius: 10px;
-    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
-    padding: 0 10px 15px;
+    border-radius: 1rem;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
+
+    .close {    
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 9;
+      border:0;
+      background-image: url("../../../public/login/x.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.6rem; 
+
+      i {
+        display: inline-block;
+        height: 2px;
+        padding-top: 12px;
+        position: relative;
+        top: 8px;
+        width: 50px;
+        border-top: 1px solid #adadad;
+        margin: 0px 12px;
+      }
+      
+      
+    }
+
+    .text {
+      margin: 20px 0;
+      display: flex;
+      font-size: 1.4rem;
+
+      .text-icon {
+          margin-right: 15px;
+          position: relative;
+          width: 9.5rem;
+          height: 5rem;
+      }
+    }
+
+
+  }
+
+  .bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  }
 }
 
-h3 {
-    text-align: center; 
-}
-
-h3 i {
-    display: inline-block;
-    height: 2px;
-    padding-top: 12px;
-    position: relative;
-    top: 8px;
-    width: 50px;
-    border-top: 1px solid #adadad;
-    margin: 0px 12px;
-}  
-
-.login-wrapper .text {
-  margin: 20px 0;
-  display: flex;
-}
-
-.login-wrapper .text img {
-    margin-right: 15px;
-}
 
 .input-group {
     height: 40px;
@@ -113,19 +138,6 @@ h3 i {
     border-radius: 10px;
 }
 
-.divshadow .close {    
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 9;
-    border:0;
-    background-image: url("../../../public/login/x.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .form-footer {
     display: flex;
 }
@@ -139,10 +151,7 @@ h3 i {
     margin-right:  10px;
 }
 
-.bounceIn {
-  -webkit-animation-name: bounceIn;
-  animation-name: bounceIn;
-}
+
 
 @-webkit-keyframes bounceIn {
   from {

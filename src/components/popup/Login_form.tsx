@@ -16,12 +16,15 @@ export default function LoginForm () {
 	<div className="login-wrapper">
 		<div className='background' onClick={() => Store.SetPopup('')}></div>
 		<div className="divshadow bounceIn">
-			<button onClick={() => Store.SetPopup('')} className="close"></button>
+			<button onClick={() => Store.SetPopup('')} className="close" />
 			
-			<h3><i></i> Войти / Зарегистрироваться <i></i></h3>
+			<h3><i/>Войти / Зарегистрироваться <i/></h3>
 				 
 			<div className="text">
-					<Image src="/login/loginicon.png" alt="" title=""/>
+					<div className='text-icon'>
+						<Image src="/login/loginicon.png" fill alt="" title=""/>
+					</div>
+
 					<div>
 						Войдите в личный кабинет, используя логин и пароль, указанный во время регистрации, или зарегистрируйтесь, если вы новый клиент.
 					</div>

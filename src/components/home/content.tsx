@@ -7,7 +7,7 @@ export const Content: React.FC = () => {
 
   return (
     <div className='container content-wrap'>
-      <div className='dark'></div>
+      <div className='dark' />
       
       <div className='text'>
         <h1>ПРОДАЖА НИЖНЕГО БЕЛЬЯ</h1>

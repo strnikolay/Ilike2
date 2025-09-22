@@ -1,26 +1,21 @@
-/*.new-sales-wrap{
-    display: flex;
-}*/
 
 .slide {
     width: 100%;
-    margin: 0 20px; 
+    margin: 0 2rem; 
 }
 
 .product-card-wrap {
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
-    /*height: 100%;*/
-    width: 275px;
-    border: 2px solid #b7b7b7;
-    padding: 15px;
-    box-shadow: 3px 3px 10px #c5c4c4, inset 10px 10px 20px rgba(13, 39, 80, 0.25);
-    border-radius: 10px;
-    margin: 0 20px;
+    width: 29rem;
+    border: .2rem solid #b7b7b7;
+    padding: 1.5rem;
+    box-shadow: 3px 3px 20px #b0b0b0, inset 10px 10px 20px rgba(13, 39, 80, 0.25);
+    border-radius: 1rem;
+    margin: 0 2rem;
 
     .title {
-    font-size: 20px;
+    font-size: 2rem;
     color: #777;
     text-align: center;
     padding-bottom: 5px;
@@ -34,30 +29,36 @@
     width: 100%;
 }
 
-.images-add .img-responsive {
-    object-fit: cover;
-    overflow: hidden;
+.images-add {
+    width: 23rem;
+    height: 23rem;
+
+    .img-responsive {
+        object-fit: cover;
+        overflow: hidden;
+    }
 }
 
 .sticker {
     position: absolute;
-    top: 10px;
-    left: -10px;
+    top: 1rem;
+    left: -1rem;
     background-color: #EC005C;
+    font-size: 1.6rem;
     color: #fff;
-    width: 60px;
-    height: 20px;
-    border-radius: 7px 0;
+    width: 7rem;
+    height: 2rem;
+    border-radius: .7rem 0;
     text-align: center ;
     box-shadow: 2px 2px 8px #000000c6;
 }
   
 
 .product-card-wrap:hover .add-to-cart {
-    width: 35px;
-    height: 35px;
-    right: 5px;
-    top: 5px;
+    width: 3.5rem;
+    height: 3.5rem;
+    right: .5rem;
+    top: .5rem;
     position: absolute;
     background-image: url('../../public/product_Card/add-to-cart.svg');
     background-size: contain;
@@ -65,10 +66,10 @@
 }
 
 .product-card-wrap:hover .add-to-fav {
-    width: 35px;
-    height: 35px;
-    right: 5px;
-    top: 45px;
+    width: 3.5rem;
+    height: 3.5rem;
+    right: .5rem;
+    top: 4.5rem;
     position: absolute;
     background-image: url('../../public/product_Card/heart.svg');
     background-size: contain;
@@ -87,12 +88,15 @@
     color: #fff;
     text-shadow: 0px 0px 6px #000;
     animation: elemScale 0.4s;
+    font-size: 1.6rem;
 
     .star {
-        width: 92px;
+        width: 9rem;
+        height: 1.7rem;
         background-image: url('../../public/product_Card/Star.svg');
         background-size: contain;
         margin-right: 5px;
+
     }
 }
 
@@ -106,7 +110,6 @@
 
 .caption {
     font-family: Cuprum;
-    /*height: 50%;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,23 +126,24 @@ h4 {
 .price_block {
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px;
-    font-size: 14px;
+    padding: 1rem;
+    font-size: 1.6rem;
 }
 
 .stock {
     background-color: #777;
     color:#ddd;
-    padding: 2px 5px;
-    border-radius: 5px;
+    padding: .2rem .5rem;
+    border-radius: .5rem;
 }
 
 .desc {
     width: 100%;
     flex-grow: 1;
     text-align: start;
-    height: 75px;
+    height: 7rem;
     overflow: hidden;
+    font-size: 1.6rem;
 }
 
 .card-footer {
@@ -151,11 +155,12 @@ h4 {
 .price {
     display: flex;
     align-items: center;
+    font-size: 1.8rem;
 }
 
 .lock {
-    width: 25px;
-    height: 25px;
+    width: 2.5rem;
+    height: 2.5rem;
     background-image: url('../../public/product_Card/lock.svg');
     background-size: contain;
 }
@@ -163,7 +168,8 @@ h4 {
 .more_btn {
     background-color: #3c948d;
     color:#ddd;
-    padding: 5px 10px;
+    padding: .5rem 1rem;
+    font-size: 1.8rem;
     border-radius: 5px;
 }
 
