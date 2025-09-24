@@ -6,7 +6,7 @@ import "./content.css";
 export const Content: React.FC = () => {
 
   return (
-    <div className='container content-wrap'>
+    <div className='container main-content-wrap'>
       <div className='dark' />
       
       <div className='text'>

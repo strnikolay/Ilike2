@@ -25,11 +25,11 @@ export const Footer: React.FC = () => {
 
                     <div className="element link">
                         <ul className="list-unstyled">
-                            <li><Link href="/#">О нас</Link></li>
-                            <li><Link href="https://ilikeopt.ru/sotrudnichestvo">Сотрудничество</Link></li>
-                            <li><Link href="https://ilikeopt.ru/dostavka">Доставка</Link></li>
-                            <li><Link href="https://ilikeopt.ru/contacts">Контакты</Link></li>
-                            <li><Link href="https://ilikeopt.ru/razmernaja-tablica">Размерные таблицы</Link></li>
+                            <li><Link href="/about">О нас</Link></li>
+                            <li><Link href="/partner">Сотрудничество</Link></li>
+                            <li><Link href="/delivery">Доставка</Link></li>
+                            <li><Link href="/contact">Контакты</Link></li>
+                            <li><Link href="/info">Размерные таблицы</Link></li>
                         </ul>
                     </div>
 
@@ -73,11 +73,11 @@ export const Footer: React.FC = () => {
                                 <div className="col-lg-12 col-md-12 col-sm-6 col-xs-6 col-xm-12">
                                     <div className="footer_head margin-top">Доставляем</div>
                                     <div className="delivery_wrapper">
-                                        <Image src="/delivery/ems.jpg" width={50} height={50} alt="" title=""/>
-                                        <Image src="/delivery/pecom.jpg" width={50} height={50} alt="" title=""/>
-                                        <Image src="/delivery/del-line.jpg" width={50} height={50} alt="" title=""/>
-                                        <Image src="/delivery/sdek.jpg" width={50} height={50} alt="" title=""/>
-                                        <Image src="/delivery/pochta.jpg" width={50} height={50} alt="" title=""/>
+                                        <Image src="/delivery/ems.jpg" width={50} height={25} alt="" title=""/>
+                                        <Image src="/delivery/pecom.jpg" width={50} height={25} alt="" title=""/>
+                                        <Image src="/delivery/del-line.jpg" width={50} height={25} alt="" title=""/>
+                                        <Image src="/delivery/sdek.jpg" width={50} height={25} alt="" title=""/>
+                                        <Image src="/delivery/pochta.jpg" width={50} height={25} alt="" title=""/>
                                     </div>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@ export const Main_about: React.FC = () => {
             <div className="o-nas-item one">
 
                 <div className='image-wrap'>
-                  <Image src="/main/about1.png" fill alt=""/>
+                  <Image src="/main/about1.png" fill sizes="10vw" alt=""/>
                 </div>
 
                 <div className="o-nas-content">              
@@ -27,7 +27,7 @@ export const Main_about: React.FC = () => {
             <div className="o-nas-item two">
 
               <div className='image-wrap'>
-                <Image src="/main/about2.png" fill alt=""/>
+                <Image src="/main/about2.png" fill sizes="10vw" alt=""/>
               </div>
                 
                 <div className="o-nas-content">   
@@ -41,7 +41,7 @@ export const Main_about: React.FC = () => {
 
             <div className="o-nas-item three">
               <div className='image-wrap'>
-                <Image src="/main/about3.png" fill alt=""/>
+                <Image src="/main/about3.png" fill sizes="10vw" alt=""/>
               </div>
                 
                 <div className="o-nas-content"> 
@@ -55,7 +55,7 @@ export const Main_about: React.FC = () => {
 
             <div className="o-nas-item four">
               <div className='image-wrap'>
-                <Image src="/main/about4.png" fill alt=""/>
+                <Image src="/main/about4.png" fill sizes="10vw" alt=""/>
               </div>              
               
                 <div className="o-nas-content">              

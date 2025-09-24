@@ -18,8 +18,7 @@ export const NewSales: React.FC = () => {
             <Image className='background' src="/main/best-back.png" width={1280} height={670} alt=''/>
             <div className='best-seller-title'></div>
             <div className="best-seller-content new-sales-wrap">
-               <Carousel className="new-sales-wrap" infiniteLoop autoPlay centerMode centerSlidePercentage={7} showThumbs={false}>
-
+               <Carousel className="new-sales-wrap" autoPlay centerMode centerSlidePercentage={7} showThumbs={false}>
                     {data.map((el,index)=>
                         <Product_card key={index} el={el} index={index}/>
                     )}

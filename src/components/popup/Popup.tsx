@@ -13,8 +13,13 @@ export const Popup = observer (() => {
 
 	useEffect (()=>{
 		const auth =localStorage.getItem('user')
-		if(auth){Store.setAuth(true)}
-	})
+		if(auth){
+			Store.setAuth(true)
+			const newuser = JSON.parse(auth)
+			//console.log("newuser", newuser)
+			Store.setUser(newuser)
+		}
+	},[])
 
 	return (
 		<>

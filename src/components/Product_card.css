@@ -30,13 +30,14 @@
 }
 
 .images-add {
+    position: relative;
     width: 23rem;
     height: 23rem;
 
-    .img-responsive {
+    /*.img-responsive {
         object-fit: cover;
         overflow: hidden;
-    }
+    }*/
 }
 
 .sticker {
@@ -54,26 +55,45 @@
 }
   
 
-.product-card-wrap:hover .add-to-cart {
+.product-card-wrap:hover .cart-icon {
     width: 3.5rem;
     height: 3.5rem;
-    right: .5rem;
+    right: 1rem;
     top: .5rem;
     position: absolute;
-    background-image: url('../../public/product_Card/add-to-cart.svg');
-    background-size: contain;
     animation: elemScale 0.4s;
+    border: 0;
+    background-color: #00000000;
+    background-size: contain;
 }
 
-.product-card-wrap:hover .add-to-fav {
+.add-cart {
+    background-image: url('../../public/product_Card/add-to-cart.svg');
+}
+
+.remove-cart {
+    background-image: url('../../public/product_Card/remove-from-cart.svg');
+}
+
+
+.product-card-wrap:hover .fav-icon {
     width: 3.5rem;
     height: 3.5rem;
-    right: .5rem;
+    right: 1rem;
     top: 4.5rem;
     position: absolute;
-    background-image: url('../../public/product_Card/heart.svg');
-    background-size: contain;
     animation: elemScale 0.4s;
+    border: 0;
+    background-color: #00000000;
+    background-size: contain;
+}
+
+.add-fav {
+    background-image: url('../../public/product_Card/fav.svg');
+}
+
+.remove-fav {
+    background-image: url('../../public/product_Card/unfav.svg');
 }
 
 .rating {

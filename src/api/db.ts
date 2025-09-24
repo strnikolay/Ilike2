@@ -53,8 +53,27 @@ export const categoryList = [
 */
 
 
+export const ColorName = [
+   "белый",
+   "пион",
+   "черный",
+   "красный",
+   "синий"
+]
 
-export interface IProdut {
+export const ColorRGB = [
+   "#FFF",
+   "#ed9fae",
+   "#000",
+   "#ff0000ff",
+   "#0000ffff"
+]
+
+export interface size {
+    
+}
+
+export interface IProduct {
     id: string;
     cat: number;
     brand: number;
@@ -62,6 +81,7 @@ export interface IProdut {
     img: Array<string>;
     sticker: string;
     price: number;
+    sizes?:Array<Object>
 }
 
 export const data = [
@@ -72,8 +92,8 @@ export const data = [
         desc: "Трусы-стринги из хлопковой ткани, кружевные сзади - с бесшовным краем, незаметным под одеждой.",
         img: ["/img/photo_2023-03-27_12-50-21-340x340.jpg"],
         sticker: "ХИТ",
-        price: 390
-
+        price: 390,
+        //sizes: [{38:[0,2,3]},{40:[0,1,3]},{42:[1,3,4]},{44:[0,2,3]}]
     },
     {
         id: "55031",
@@ -82,7 +102,8 @@ export const data = [
         desc: "Трусы (хлопок) с высокой посадкой из хлопковой ткани , кружевные сзади - с плоским краем, незаметным под одеждой. Сзади полностью закрывают ягодицы.",
         img: ["/img/photo_2023-03-27_12-38-50-340x340.jpg"],
         sticker: "ХИТ",
-        price: 450
+        price: 450,
+        //size: [{38:[0,2,3]},{40:[0,1,3]},{42:[1,3,4]},{44:[0,2,3]}]
     },
     {
         id: "55048",
@@ -91,8 +112,8 @@ export const data = [
         desc: "Трусы-бразилиана, из хлопковой ткани, кружевные сзади - с бесшовным краем, незаметным под одеждой. ",
         img: ["/img/photo_2023-03-27_13-02-20-250x250.jpg"],
         sticker: "ХИТ",
-        price: 500
-
+        price: 500,
+        //size: [{38:[0,2,3]},{40:[0,1,3]},{42:[1,3,4]},{44:[0,2,3]}]
     },
 
 

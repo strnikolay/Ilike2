@@ -20,7 +20,7 @@ const SelectBrand:FC<Props> = observer (({el}) => {
     } 
     console.log(selected)
     /*setData(Store.ProductFiltredByCatagory)*/
-  }, [Store])
+  },[Store])
 
   return (
     <>  

@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { makeAutoObservable } from 'mobx';
-import { data, IProdut } from '@/api/db';
+import { data, IProduct } from '@/api/db';
 import { IUser } from './IUser';
-import { user } from '@/api/user_db';
+import { userMock } from '@/api/user_db';
 
 class store {
   constructor() {
@@ -11,7 +11,7 @@ class store {
   }
 
   user = {} as IUser;    
-  setUser(user: IUser) {this.user = user;}
+  setUser(newuser: IUser) {this.user = newuser;}
 
   isLoginOpen = true; 
   setIsLoginOpen(bool: boolean) {this.isLoginOpen = bool}
@@ -27,7 +27,7 @@ class store {
             /*localStorage.setItem('refreshtoken', response.data.refreshToken);
             localStorage.setItem('clientId', response.data.user.id);
             this.setUser(response.data.user);*/
-            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(userMock));
             this.setAuth(true);
             this.SetPopup("")
         } catch {
@@ -45,7 +45,7 @@ class store {
   }
 
   ProductFiltredByCatagory = data
-  SetProductFiltredByCatagory(data:Array<IProdut>){
+  SetProductFiltredByCatagory(data:Array<IProduct>){
     this.ProductFiltredByCatagory = data
   } 
 
@@ -58,14 +58,13 @@ class store {
 
 
   SelectedBrand:Array<string> = []
-
   setSelectedBrand(arr: Array<string>){ this.SelectedBrand = arr}
 
   brandSelectHandler = (e:React.ChangeEvent<HTMLInputElement>, el:string) => {
         let arr = []
         //console.log(this.tempMortgage)
-        console.log(el)
-        console.log(e.target.checked)
+        //console.log(el)
+        //console.log(e.target.checked)
         if(e.target.checked){
             arr = [el, ...this.SelectedBrand]
             this.setSelectedBrand(arr)
@@ -74,6 +73,37 @@ class store {
         }
     }
 
+  addToFav (ProductId:string) {
+    const tempUser = this.user
+    tempUser.fav.push(ProductId)
+    this.setUser(tempUser)
+    localStorage.setItem("user", JSON.stringify(tempUser))
+  }
+  
+  removeFav (ProductId:string) {
+    const tempUser = this.user
+    //console.log(tempUser.fav)
+    tempUser.fav = tempUser.fav.filter((el) => el !== ProductId)
+    //console.log(tempUser)
+    this.setUser(tempUser)
+    localStorage.setItem("user", JSON.stringify(tempUser))
+  }
+
+  addToCart (ProductId:string) {
+    const tempUser = this.user
+    tempUser.cart.push(ProductId)
+    this.setUser(tempUser)
+    localStorage.setItem("user", JSON.stringify(tempUser))
+  }
+
+  removeFromCart (ProductId:string) {
+    const tempUser = this.user
+    //console.log(tempUser.fav)
+    tempUser.cart = tempUser.cart.filter((el) => el !== ProductId)
+    //console.log(tempUser)
+    this.setUser(tempUser)
+    localStorage.setItem("user", JSON.stringify(tempUser))
+  }
 
   // Computed value example
   /*get doubleCount() {

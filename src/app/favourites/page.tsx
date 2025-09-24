@@ -1,0 +1,36 @@
+'use client'
+import "./favourites.css";
+import {FC, useEffect, useState } from "react";
+import { useStore } from "@/store/storeProvidert";
+import { data, IProduct } from '@/api/db';
+import { observer } from 'mobx-react-lite';
+import Product_card  from '@/components/Product_card';
+
+const Favourites:FC = observer(() => {
+  const {Store} = useStore();
+  const [favList, setfavList] = useState<Array<IProduct>>([])
+ 
+  useEffect(()=>{
+      const tempArr:Array<IProduct> = []
+      Store.user.fav.forEach((id)=>{
+        const el = data.find((el)=> el.id===id)
+        if(el){tempArr.push(el)}
+      })
+      //console.log(tempArr)
+      setfavList(tempArr)
+  },[Store.user.fav])
+
+  return (
+    <div className="fav-wrap container">
+      <h1>Избраные товары</h1>
+      <div className="fav-product-wrap">
+          {favList.map((el:IProduct,index:number)=>
+            <Product_card key={index} el={el} index={index}/>
+          )}
+      </div>
+        
+    </div>
+  )
+});
+
+export default (Favourites);

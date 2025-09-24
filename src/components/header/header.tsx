@@ -81,10 +81,10 @@ export const Header: React.FC = observer(() => {
 				</div>
 
 				{Store.isAuth?
-					<div className='cart-wrap'>
+					<Link href="/cart" className='cart-wrap'>
 						<Image src="/header/cart-svg.svg" alt="iLikeOpt.ru" fill priority={false}/>
 						<div className='header-cart-sum'>17 600р</div>
-					</div>
+					</Link>
 					:null
 				}
 			
@@ -115,11 +115,15 @@ export const Header: React.FC = observer(() => {
 					<li data-id="1"><Link href="/partner">Сотрудничество</Link></li>
 					<li data-id="2"><Link	href="/delivery">Доставка</Link></li>
 					<li data-id="3"><Link	href="/contact">Контакты</Link></li>
-					<li data-id="4"><Link	href="https://ilikeopt.ru/razmernaja-tablica">Информация <i className="fa fa-chevron-down"></i></Link></li>	
+					<li data-id="4">
+						<Link href="/info">
+							Информация <i className="fa-chevron-down"/>
+						</Link>
+					</li>	
 				</ul>
 				{Store.isAuth?						    
 					<div className='nav-btn'>
-						<Link className='fav-link' href="/fav"/>
+						<Link className='fav-link' href="/favourites"/>
 					</div>:null
 				}
 			</nav>
@@ -129,7 +133,7 @@ export const Header: React.FC = observer(() => {
 				<button onClick={() => Store.logout()} className="logout">
 					<Image src="/header/logout-svg.svg" title="iLikeOpt.ru" alt="iLikeOpt.ru" fill/>
 				</button>
-				<button onClick={() => router.push('/cabinet')} className="profile">
+				<button onClick={() => router.push('/profile')} className="profile">
 					Личный кабинет
 				</button>
 				<button onClick={() => setMobilemenu(true)} className="burger-menu">

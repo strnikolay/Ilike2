@@ -60,11 +60,14 @@ input[type='checkbox']:checked+label{
     background: aqua;
 }
 
+.catalog-content-wrap {
+    width: 100%;
+}
+
 .catalog-product-wrap {
     display: flex;
     justify-content: space-between;
     padding: 0 5px ;
-    width: 990px;
     flex-wrap: wrap;
 
     .product-card-wrap {
