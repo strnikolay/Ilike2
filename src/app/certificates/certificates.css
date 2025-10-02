@@ -1,37 +1,18 @@
-.contact-wrap {
+.certificates-wrap {
     display: flex;
-    flex-direction: column;
-}
 
-h1 {
-    margin: 20px 0;
-}
-
-.content-wrap {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-
-.contact-item {
-    width: 500px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px #000000c1;
-    padding: 10px;
-}
-
-.tabs {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    .tabs {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
 
         .tab_menu {
             margin: 0.5rem 0;
+            width: 100%;
             /*padding: 5px;*/
             display: flex;
-            flex-direction: row;
-            list-style: none;
             justify-content: space-between; 
         
             .tab_container{
@@ -43,8 +24,8 @@ h1 {
                     border: 1px solid #000;
                     border-radius: 1rem;
                     background-color: #fff;
-                    font-size: 1.8rem;
-                    font-weight: 800;
+                    font-size: 1.5rem;
+                    font-weight: 600;
                 }
 
                 button:focus{
@@ -53,3 +34,16 @@ h1 {
                 }
             }
         }}
+    
+    .content{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.cert-img {
+    position: relative;
+    width: 20rem;
+    height: 30rem;
+}
+

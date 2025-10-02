@@ -17,13 +17,12 @@ interface Props {
 
 
 
-const Product_card:FC<Props> = observer(({el, index}) => {
+const Product_page:FC<Props> = observer(({el, index}) => {
     const {Store} = useStore()
-    const [isFav, setIsFav] = useState(false)
-    const [isInCart, setIsInCart] = useState(false)
-    //console.log(el)
+    //const [isFav, setIsFav] = useState(false)
+    
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         if(Store.user.fav.includes(el.id)){
             setIsFav(true)
         } else {
@@ -65,12 +64,12 @@ const Product_card:FC<Props> = observer(({el, index}) => {
             Store.addToCart(el.id)
             setIsInCart(true)
         }
-    }
+    }*/
 
     return (
     <div key={index} className="product-card-wrap">
         <div className='title'>
-            {el.id} {brand} {category.cat_title}
+            {el.id} {brandList[el.brand]} {categoryList[el.cat-1].cat_title}
         </div>
         <div className="image relative">
             <div className="images-add">
@@ -80,13 +79,13 @@ const Product_card:FC<Props> = observer(({el, index}) => {
             <div className="add-to-cart"></div>
             <input 
                 type='button' 
-                className={`cart-icon `+(isInCart?"remove-cart":"add-cart")} 
-                onClick={addToCartHandler}
+                //className={`cart-icon `+(isInCart?"remove-cart":"add-cart")} 
+                //onClick={addToCartHandler}
             />
             <input 
                 type='button' 
-                className={`fav-icon `+(isFav?"remove-fav":"add-fav")} 
-                onClick={addToFavHandler}
+                //className={`fav-icon `+(isFav?"remove-fav":"add-fav")} 
+                //onClick={addToFavHandler}
             />
             <div className="rating">
                 <div className='star'></div>
@@ -115,5 +114,5 @@ const Product_card:FC<Props> = observer(({el, index}) => {
     );
 });
 
-export default (Product_card)
+export default (Product_page)
  

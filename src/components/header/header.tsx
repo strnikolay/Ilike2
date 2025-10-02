@@ -81,7 +81,7 @@ export const Header: React.FC = observer(() => {
 				</div>
 
 				{Store.isAuth?
-					<Link href="/cart" className='cart-wrap'>
+					<Link href="/cart" className='cart-btn-wrap'>
 						<Image src="/header/cart-svg.svg" alt="iLikeOpt.ru" fill priority={false}/>
 						<div className='header-cart-sum'>17 600р</div>
 					</Link>
@@ -102,19 +102,19 @@ export const Header: React.FC = observer(() => {
 
 
 			<nav>
-				<ul>
+				<ul className='nav-list'>
 					<li data-id="0" className="hasdropdown">
 						<Link href="/about">О нас <i className="fa fa-chevron-down"></i></Link>
-						<ul>
-							<li data-id="1"><Link href="/#">Сертификаты</Link></li>
+						<ul className='dropdown-list'>
+							<li data-id="1"><Link href="/certificates">Сертификаты</Link></li>
 							<li data-id="1"><Link href="/#">Политика Конфиденциальности</Link></li>
 							<li data-id="1"><Link href="/#">Новости</Link></li>
 							<li data-id="1"><Link href="/#">Отзывы</Link></li>
 						</ul>
 					</li>
 					<li data-id="1"><Link href="/partner">Сотрудничество</Link></li>
-					<li data-id="2"><Link	href="/delivery">Доставка</Link></li>
-					<li data-id="3"><Link	href="/contact">Контакты</Link></li>
+					<li data-id="2"><Link href="/delivery">Доставка</Link></li>
+					<li data-id="3"><Link href="/contact">Контакты</Link></li>
 					<li data-id="4">
 						<Link href="/info">
 							Информация <i className="fa-chevron-down"/>

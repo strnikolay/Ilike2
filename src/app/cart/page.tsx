@@ -2,9 +2,12 @@
 import "./cart.css";
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { data, IProduct } from '@/api/db';
+import { data, IProduct, brandList, categoryList } from '@/api/db';
 import { observer } from 'mobx-react-lite';
+import Cart_item from "./cart_item";
 //import Product_card  from '@/components/Product_card';
+
+
 
 const Cart:FC = observer(() => {
   const {Store} = useStore();
@@ -12,23 +15,23 @@ const Cart:FC = observer(() => {
  
   useEffect(()=>{
       const tempArr:Array<IProduct> = []
-      Store.user.cart.forEach((id)=>{
-        const el = data.find((el)=> el.id===id)
+      Store.user.cart.forEach((elInCart)=>{
+        const el = data.find((elInDB)=> elInDB.id===elInCart.id)
         if(el){tempArr.push(el)}
       })
-      console.log(tempArr)
+      //console.log(tempArr)
       setCartList(tempArr)
-  },[Store.user.fav])
+  },[Store.user.cart])
 
   return (
-    <div className="fav-wrap container">
+    <div className="cart-wrap container">
       <h1>Корзина товаров</h1>
-      <div className="fav-product-wrap">
+      <div className="cart-product-wrap">
           {cartList.map((el:IProduct,index:number)=>
-            <div key={index} data-el={el} data-index={index}></div>
+            <Cart_item key={index} item={el} itemIndex={index}/>
           )}
       </div>
-        
+      <button className="order-next-btn">Оформить заказ</button>  
     </div>
   )
 });

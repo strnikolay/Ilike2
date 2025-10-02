@@ -6,27 +6,40 @@ import { brandList} from '@/api/db';
 import { observer } from 'mobx-react-lite';
 import './catalog.css'
 import SelectBrand from "./filter_element/select_brand";
+import SelectSize from "./filter_element/select_size";
+import SelectColor from "./filter_element/select_color";
 
 //import { LoginForm } from "@/app/(login)/page";
 
-const Filter:FC = observer (() => {
+interface Props {
+  brands:Array<string>;
+  sizes:Array<number>;
+  colors:Array<number>;
+}
+
+const Filter:FC<Props> = observer (({brands, sizes, colors}) => {
   //const {Store} = useStore()
-  /*const [ndata, setData] = useState<any>(data)*/
+  
 
   useEffect (()=>{
-    /*console.log("111",ndata)
-    setData(Store.ProductFiltredByCatagory)*/
+   
   },[])
-
-  /*const brandSelectHandler = (e: ChangeEvent<HTMLInputElement>) =>{
-    console.log(e.target.value)
-  }*/
 
   return (
     <div className="filter-wrap">
       <div className="brand-filter">
-        {brandList.map((el:string,i:number)=>(
+        {brands.map((el:string,i:number)=>(
          <SelectBrand key={i} el={el}/>           
+        ))}
+      </div>
+      <div className="size-filter">
+        {sizes.map((size:number,i:number)=>(
+         <SelectSize key={i} size={size}/>           
+        ))}
+      </div>
+      <div className="colors-filter">
+        {colors.map((color:number,i:number)=>(
+         <SelectColor key={i} color={color}/>           
         ))}
       </div>
     

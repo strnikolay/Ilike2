@@ -11,6 +11,9 @@ export const Category_select: React.FC = () => {
 
   return (
 	<div className="category-select-wrapper">
+      <button className='' onClick={()=> {Store.Filtred(null)}}>
+          Все
+        </button>
       {categoryList.map(({cat_title, id}, i) => (
         <button key={i} className='' onClick={()=> {Store.Filtred(id)}}>
           {cat_title}

@@ -1,3 +1,7 @@
+export interface ICartItem {
+    
+}
+
 export const userMock = {
     id:"1",
     email:"test@test.ru",

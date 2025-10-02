@@ -2,7 +2,7 @@
 import React from 'react';
 import { makeAutoObservable } from 'mobx';
 import { data, IProduct } from '@/api/db';
-import { IUser } from './IUser';
+import { IcartItemParam, IUser } from './IUser';
 import { userMock } from '@/api/user_db';
 
 class store {
@@ -44,13 +44,19 @@ class store {
         }
   }
 
-  ProductFiltredByCatagory = data
+  ProductFiltredByCatagory:Array<IProduct> = data
+  
   SetProductFiltredByCatagory(data:Array<IProduct>){
     this.ProductFiltredByCatagory = data
-  } 
+  }
 
-  Filtred (param:number) {
-    this.SetProductFiltredByCatagory(data.filter((el)=> el.cat === param))
+  Filtred (param:number|null) {
+    if(param){
+      this.SetProductFiltredByCatagory(data.filter((el)=> el.cat === param))
+    } else {
+      this.SetProductFiltredByCatagory(data)
+    }
+    
   }
 
   popup = "";
@@ -60,18 +66,52 @@ class store {
   SelectedBrand:Array<string> = []
   setSelectedBrand(arr: Array<string>){ this.SelectedBrand = arr}
 
-  brandSelectHandler = (e:React.ChangeEvent<HTMLInputElement>, el:string) => {
+  brandSelectHandler = (
+    e:React.ChangeEvent<HTMLInputElement>, 
+    el:string
+  ) => {
         let arr = []
-        //console.log(this.tempMortgage)
-        //console.log(el)
-        //console.log(e.target.checked)
         if(e.target.checked){
             arr = [el, ...this.SelectedBrand]
             this.setSelectedBrand(arr)
         } else if(!e.target.checked){
             this.setSelectedBrand(this.SelectedBrand.filter((a)=> a !== el));
         }
-    }
+  }
+
+
+
+  SelectedSize:Array<number> = []
+  setSelectedSize(arr: Array<number>){ this.SelectedSize = arr}
+
+  sizeSelectHandler = (
+    e:React.ChangeEvent<HTMLInputElement>, 
+    el:number
+  ) => {
+        let arr = []
+        if(e.target.checked){
+            arr = [el, ...this.SelectedSize]
+            this.setSelectedSize(arr)
+        } else if(!e.target.checked){
+            this.setSelectedSize(this.SelectedSize.filter((a)=> a !== el));
+        }
+  }
+
+  SelectedColor:Array<number> = []
+  setSelectedColor(arr: Array<number>){ this.SelectedSize = arr}
+
+  colorSelectHandler = (
+    e:React.ChangeEvent<HTMLInputElement>, 
+    el:number
+  ) => {
+        let arr = []
+        if(e.target.checked){
+            arr = [el, ...this.SelectedSize]
+            this.setSelectedColor(arr)
+        } else if(!e.target.checked){
+            this.setSelectedColor(this.SelectedSize.filter((a)=> a !== el));
+        }
+  }
 
   addToFav (ProductId:string) {
     const tempUser = this.user
@@ -91,7 +131,11 @@ class store {
 
   addToCart (ProductId:string) {
     const tempUser = this.user
-    tempUser.cart.push(ProductId)
+    const cartItem = {
+      id:ProductId,
+      params: []
+    }
+    tempUser.cart.push(cartItem)
     this.setUser(tempUser)
     localStorage.setItem("user", JSON.stringify(tempUser))
   }
@@ -99,8 +143,33 @@ class store {
   removeFromCart (ProductId:string) {
     const tempUser = this.user
     //console.log(tempUser.fav)
-    tempUser.cart = tempUser.cart.filter((el) => el !== ProductId)
+    tempUser.cart = tempUser.cart.filter((el) => el.id !== ProductId)
     //console.log(tempUser)
+    this.setUser(tempUser)
+    localStorage.setItem("user", JSON.stringify(tempUser))
+  }
+
+  addItemParamsToDB (itemIndex:number, params:IcartItemParam) {
+    const tempUser=this.user
+    console.log(params)
+    //console.log(itemIndex)
+    //console.log("до", tempUser.cart[itemIndex])
+    tempUser.cart[itemIndex].params.push(params)
+    //console.log("после", tempUser.cart[itemIndex])
+    //this.setUser(tempUser)
+    //localStorage.setItem("user", JSON.stringify(tempUser))
+  }
+
+  updateParamsInDB (itemIndex:number, params:IcartItemParam, index:number){
+    const tempUser=this.user
+    tempUser.cart[itemIndex].params.splice(index, 1, params)
+    this.setUser(tempUser)
+    localStorage.setItem("user", JSON.stringify(tempUser))
+  }
+
+  deleteParamsInCartItem (itemIndex:number, index:number) {
+    const tempUser=this.user
+    tempUser.cart[itemIndex].params.splice(index, 1)
     this.setUser(tempUser)
     localStorage.setItem("user", JSON.stringify(tempUser))
   }

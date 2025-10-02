@@ -111,7 +111,7 @@
     }
 }
 
-.cart-wrap {
+.cart-btn-wrap {
     position: relative;
     margin-left: 1rem;
     width: 5.5rem;
@@ -163,7 +163,7 @@ nav {
     flex-grow: 1;
     margin: 0 2rem;
 
-    ul {
+    .nav-list {
         list-style: none;
         display: flex;
         justify-content: space-between;
@@ -182,8 +182,21 @@ nav {
             &:hover {
                 color: #fff;
                 background-color: #3C948D;
-                ul {
+                .dropdown-list {
+                    list-style: none;
                     display: flex;
+                    border-radius: 1rem;
+                    li {
+                        width: 100%;
+                        border-radius: 0;                       
+                        align-content: center;
+                        a{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            
+                        }
+                    }
                 }
             }
         }
