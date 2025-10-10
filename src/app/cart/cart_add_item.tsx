@@ -1,7 +1,7 @@
 'use client'
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { mockdata, IProduct, ColorName, } from '@/api/db';
+import { mockdata, ColorName, } from '@/api/db';
 import { observer } from 'mobx-react-lite';
 import { IcartItemParam } from "@/store/IUser";
 //import Product_card  from '@/components/Product_card';
@@ -13,7 +13,7 @@ interface Props {
   index:number;
 }
 
-const Add_item:FC<Props> = observer(({item, params={size:0, color:0, count:0}, itemIndex, index}) => {
+const Add_item:FC<Props> = observer(({item, params, itemIndex, index}) => {
   const {Store} = useStore();
   const [sizeList, setSizeList] = useState<Array<number>>([]);
   const [selectedSize, setSelectedSize] = useState<number>(params.size);
