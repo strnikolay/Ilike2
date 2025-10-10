@@ -4,6 +4,7 @@ import { useStore } from "@/store/storeProvidert";
 import { mockdata, ColorName, } from '@/api/db';
 import { observer } from 'mobx-react-lite';
 import { IcartItemParam } from "@/store/IUser";
+import {IProduct} from "@/store/interfaces";
 //import Product_card  from '@/components/Product_card';
 
 interface Props {
