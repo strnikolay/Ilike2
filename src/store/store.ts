@@ -1,9 +1,7 @@
 
-import React from 'react';
 import { makeAutoObservable } from 'mobx';
-import { mockdata} from '@/api/db';
 import { userMock } from '@/api/user_db';
-import {IProduct, IcartItemParam, IUser} from "@/store/interfaces"
+import {IUser} from "@/store/interfaces"
 
 class store {
   constructor() {

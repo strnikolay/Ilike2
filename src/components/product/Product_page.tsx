@@ -1,6 +1,6 @@
 'use client'
 
-import React, {FC, useEffect, useState } from 'react';
+import React, {FC} from 'react';
 import Image from 'next/image';
 import "./Product_card.css";
 //import { Carousel } from "react-responsive-carousel";

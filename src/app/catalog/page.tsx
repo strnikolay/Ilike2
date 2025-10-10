@@ -2,7 +2,7 @@
 
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { mockdata, brandList} from '@/api/db';
+import { mockdata} from '@/api/db';
 import {IProduct} from "@/store/interfaces"
 import Product_card  from '@/components/product/Product_card';
 import { Category_select } from "@/app/catalog/category_select";
@@ -12,7 +12,7 @@ import Filter from "./filter_element/filter";
 //import { LoginForm } from "@/app/(login)/page";
 
 const Catalog:FC = observer(() => {
-  const {Store, Product_Store} = useStore()
+  const {Product_Store} = useStore()
   const [productList, SetProductList] = useState<IProduct[]>(mockdata)
   const [sizes, setSizes] = useState<Array<number>>([])
   const [colors, setColors] = useState<Array<number>>([])

@@ -29,7 +29,7 @@ const Product_card:FC<Props> = observer(({el, index}) => {
         } else {
             setIsFav(false)
         }
-    },[Store.user.fav])
+    },[Store.user.fav, el.id])
 
     useEffect(()=>{
         const findItem = Store.user.cart.find((elInCart)=> elInCart.id === el.id)
@@ -38,7 +38,7 @@ const Product_card:FC<Props> = observer(({el, index}) => {
         } else {
             setIsInCart(false)
         }
-    },[Store.user.fav])
+    },[Store.user.cart, el.id])
 
     const brand = brandList[el.brand]
     const category = categoryList[el.cat-1]
