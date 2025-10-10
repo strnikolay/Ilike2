@@ -6,7 +6,7 @@ import Image from 'next/image';
 /*import { useRouter } from 'next/navigation'*/
 import { useStore } from "@/store/storeProvidert";
 import Link from 'next/link';
-//import { observer } from 'mobx-react-lite';
+//import { observer } from 'mobx-react';
 
 export default function LoginForm () {
 	const {Store} = useStore()	

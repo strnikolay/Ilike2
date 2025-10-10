@@ -1,6 +1,3 @@
-export interface ICartItem {
-    
-}
 
 export const userMock = {
     id:"1",

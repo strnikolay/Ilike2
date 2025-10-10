@@ -2,7 +2,8 @@
 import "./cart.css";
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { data, IProduct, brandList, categoryList } from '@/api/db';
+import { mockdata, brandList, categoryList } from '@/api/db';
+import {IProduct} from "@/store/interfaces";
 import { observer } from 'mobx-react-lite';
 import Cart_item from "./cart_item";
 //import Product_card  from '@/components/Product_card';
@@ -10,13 +11,13 @@ import Cart_item from "./cart_item";
 
 
 const Cart:FC = observer(() => {
-  const {Store} = useStore();
+  const {Store, Cart_Store} = useStore();
   const [cartList, setCartList] = useState<Array<IProduct>>([])
  
   useEffect(()=>{
       const tempArr:Array<IProduct> = []
       Store.user.cart.forEach((elInCart)=>{
-        const el = data.find((elInDB)=> elInDB.id===elInCart.id)
+        const el = mockdata.find((elInDB)=> elInDB.id===elInCart.id)
         if(el){tempArr.push(el)}
       })
       //console.log(tempArr)

@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import "./Login_form.css";
 import { useStore } from "@/store/storeProvidert";
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react';
 import LoginForm from './Login_form';
 
 
@@ -16,10 +16,9 @@ export const Popup = observer (() => {
 		if(auth){
 			Store.setAuth(true)
 			const newuser = JSON.parse(auth)
-			//console.log("newuser", newuser)
 			Store.setUser(newuser)
 		}
-	},[])
+	})
 
 	return (
 		<>

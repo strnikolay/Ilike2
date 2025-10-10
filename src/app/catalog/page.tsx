@@ -2,31 +2,40 @@
 
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { data, brandList, IProduct } from '@/api/db';
-import Product_card  from '@/components/Product_card';
+import { mockdata, brandList} from '@/api/db';
+import {IProduct} from "@/store/interfaces"
+import Product_card  from '@/components/product/Product_card';
 import { Category_select } from "@/app/catalog/category_select";
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react';
 import './catalog.css'
-import Filter from "./filter";
+import Filter from "./filter_element/filter";
 //import { LoginForm } from "@/app/(login)/page";
 
 const Catalog:FC = observer(() => {
-  const {Store} = useStore()
-  const [ndata, setData] = useState<Array<IProduct>>(data)
+  const {Store, Product_Store} = useStore()
+  const [productList, SetProductList] = useState<IProduct[]>(mockdata)
   const [sizes, setSizes] = useState<Array<number>>([])
   const [colors, setColors] = useState<Array<number>>([])
-  const [brands, setBrands] = useState<Array<string>>([])
 
-  useEffect (()=>{
-    /*console.log("111",ndata)*/
-    //console.log("111", Store.SelectedBrand)
-    const arr:Array<IProduct> = [];
-    const sizesArr:Array<number> = [];
-    const colorsArray: Array<number> = []
-    const brandArr:Array<string> = [];
+  /*useEffect(()=>{
+    setproductList(Product_Store.productList)
+  },[Product_Store.productList])*/
+
+  /*useEffect (()=>{
+
+    //const arr:IProduct[] = 
+    
+    //Product_Store.FiltredByCategory(Product_Store.selectedCategory);
+    
+    //const sizesArr:Array<number> = [];
+    //const colorsArray: Array<number> = []
+    //const brandArr:Array<string> = [];
+
+    //Product_Store.FiltredByCategory(Product_Store.selectedCategory)
+
+
     Store.ProductFiltredByCatagory.forEach((el:IProduct)=> {
       brandArr.push(brandList[el.brand])
-      
 
       if(Store.SelectedBrand.length > 0) {
         Store.SelectedBrand.forEach((brand:string)=>{
@@ -60,6 +69,7 @@ const Catalog:FC = observer(() => {
 
 
     })
+
     //console.log(sizesArr)
 
     const clearBrand = [...new Set(brandArr)] 
@@ -71,20 +81,30 @@ const Catalog:FC = observer(() => {
     const clearColors = [...new Set(colorsArray)] 
     setColors(clearColors.sort())
 
-    setData(arr)
-  },[Store.ProductFiltredByCatagory, Store.SelectedBrand])
+    //SetProductList(arr)
+  },[Product_Store.selectedCategory])*/
 
-  /*useEffect(()=>{
-    console.log("111",sizes)
-  },[sizes])*/
+
+  useEffect(()=>{
+    Product_Store.FiltredByCategory(Product_Store.selectedCategory)
+    Product_Store.setSelectedBrand([])
+  },[Product_Store.selectedCategory])
+
+  useEffect(()=>{
+    Product_Store.FiltredByBrand(Product_Store.SelectedBrand)
+  },[Product_Store.SelectedBrand])
+
+  useEffect(()=>{
+    Product_Store.FiltredBySizes(Product_Store.SelectedSizes)
+  },[Product_Store.SelectedSizes])
 
   return (
     <div className="catalog-wrap">
       <Category_select/>
       <div className="catalog-content-wrap">
-        <Filter brands={brands} sizes={sizes} colors={colors}/>
+        <Filter sizes={sizes} colors={colors}/>
         <div className="catalog-product-wrap">
-          {ndata.map((el:IProduct,index:number)=>
+          {Product_Store.productFiltredBySizes.map((el:IProduct,index:number)=>
             <Product_card key={index} el={el} index={index}/>
           )}
         </div>

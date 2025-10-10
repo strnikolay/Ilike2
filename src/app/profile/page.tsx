@@ -7,7 +7,7 @@ import {
 } from "react";
 import { useStore } from "@/store/storeProvidert";
 //import { data, IProduct } from '@/api/db';
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react';
 //import Product_card  from '@/components/Product_card';
 
 const Profile:FC = observer(() => {

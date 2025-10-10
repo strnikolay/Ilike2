@@ -5,13 +5,13 @@ import "./header.css";
 import { useRouter } from 'next/navigation'
 import Link from 'next/link';
 import { useStore } from "@/store/storeProvidert";
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react';
 
 export const Header: React.FC = observer(() => {
 	const router = useRouter();
 	const {Store} = useStore();
 	const [dropdown, setDropdown] = React.useState(false)
-	const [mobilemenu, setMobilemenu] = React.useState(false)
+	//const [mobilemenu, setMobilemenu] = React.useState(false)
 
   	return (
   	<div className="header">
@@ -136,7 +136,10 @@ export const Header: React.FC = observer(() => {
 				<button onClick={() => router.push('/profile')} className="profile">
 					Личный кабинет
 				</button>
-				<button onClick={() => setMobilemenu(true)} className="burger-menu">
+				<button 
+					//onClick={() => setMobilemenu(true)} 
+					className="burger-menu"
+				>
 					<Image src="/burger.svg" title="iLikeOpt.ru" alt="iLikeOpt.ru" fill/>
 				</button>
 
@@ -145,7 +148,10 @@ export const Header: React.FC = observer(() => {
 				<button onClick={() => Store.SetPopup('Login')} className="login">
 					Войти/Зарегистрироваться
 				</button>
-				<button onClick={() => setMobilemenu(true)} className="burger-menu">
+				<button 
+					//onClick={() => setMobilemenu(true)} 
+					className="burger-menu"
+				>
 				</button>
 			</div>}	
 			

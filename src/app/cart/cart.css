@@ -71,13 +71,18 @@
                         }
                     }
 
+                    .increment:has(input:disabled), .decrement:has(input:disabled) {   
+                        color:#989898;
+                        border-color: #989898; 
+                    }
+
                     .increment {
-                        border-radius: 1rem 0 0 1rem;
-                        margin-left: 1rem;
+                        border-radius: 0 1rem 1rem 0;
                     }
 
                     .decrement {
-                        border-radius: 0 1rem 1rem 0;
+                        border-radius: 1rem 0 0 1rem;
+                        margin-left: 1rem;
                     }
 
                     .count-label {

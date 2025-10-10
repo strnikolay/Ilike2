@@ -1,53 +1,74 @@
+'use client'
 import "./certificates.css"
 import Tabs from "./Tabs/tabs"
 import Tab from "./Tabs/tab"
-import Image from "next/image"
+//import Image from "next/image"
 
-export default function Contact() {
+export default function Certificates() {
 
-  return (
+    const enlargeHandle = (e:React.MouseEvent<HTMLButtonElement>) =>{
+        e.currentTarget.classList.toggle("big")
+    } 
+
+    return (
     <div className="certificates-wrap container">
         <h1></h1>
        <Tabs>
             <Tab title="iLike (АйЛайк)">
-                
-                    <div className="cert-img">
-                        <Image src="/certificates/ilike_1_s.jpg" fill alt=''/>
-                    </div>
-                    <div className="cert-img">
-                        <Image src="/certificates/ilike_2_s.jpg" fill alt=''/>
-                    </div>
-                
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="ilike-one"></div>
+                </button>
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="ilike-two"></div>
+                </button>                
             </Tab>
 
             <Tab title="BigLif (БигЛиф)">
-                    <div className="cert-img">
-                        <Image src="/certificates/biglif_1_s.jpg" fill alt=''/>
-                    </div>
-                    <div className="cert-img">
-                        <Image src="/certificates/biglif_2_s.jpg" fill alt=''/>
-                    </div>
-                    <div className="cert-img">
-                        <Image src="/certificates/biglif_3_s.jpg" fill alt=''/>
-                    </div>
+                    <button className="cert-img" onClick={enlargeHandle}>
+                        <div className="biglif-one"></div>
+                    </button>
+                    <button className="cert-img" onClick={enlargeHandle}>
+                        <div className="biglif-two"></div>
+                    </button>
+                    <button className="cert-img" onClick={enlargeHandle}>
+                        <div className="biglif-three"></div>
+                    </button>
             </Tab>
 
             <Tab title="Allegro (Аллегро)">
-                <div className="cert-img">
-                    <Image src="/certificates/allegro_1_s.jpg" fill alt=''/>
-                </div>
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="allegro-one"></div>
+                </button>
             </Tab>
 
             <Tab title="Glora (Глора)">
-                Для личного побщения 
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="glora-one"></div>
+                </button>
             </Tab>
 
             <Tab title="Orhideja (Орхидея)">
-                Для личного побщения 
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="orh-one"></div>
+                </button>
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="orh-two"></div>
+                </button>
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="orh-three"></div>
+                </button>
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="orh-four"></div>
+                </button>                                 
             </Tab>
 
             <Tab title="Hовое время">
-                Для личного побщения 
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="nv-one"></div>
+                </button>
+                <button className="cert-img" onClick={enlargeHandle}>
+                    <div className="nv-two"></div>
+                </button> 
             </Tab>
         </Tabs>
         

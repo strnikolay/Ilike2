@@ -3,8 +3,8 @@ import "./favourites.css";
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
 import { data, IProduct } from '@/api/db';
-import { observer } from 'mobx-react-lite';
-import Product_card  from '@/components/Product_card';
+import { observer } from 'mobx-react';
+import Product_card  from '@/components/product/Product_card';
 
 const Favourites:FC = observer(() => {
   const {Store} = useStore();

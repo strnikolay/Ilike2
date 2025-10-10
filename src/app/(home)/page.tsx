@@ -1,14 +1,14 @@
 'use client'
 
-import { Poster } from "@/components/home/Poster";
-import { NewSales } from "@/components/home/main_bestsaler";
-import { Main_about } from "@/components/home/main_about";
-import { Main_news } from "@/components/home/main_news";
+import { Poster } from "@/app/(home)/home/Poster";
+import { NewSales } from "@/app/(home)/home/main_bestsaler";
+import { Main_about } from "@/app/(home)/home/main_about";
+import { Main_news } from "@/app/(home)/home/main_news";
 import { useEffect } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { Content } from "@/components/home/content";
-import { observer } from 'mobx-react-lite';
-import { Review } from "@/components/home/main_review";
+import { Content } from "@/app/(home)/home/content";
+import { observer } from 'mobx-react';
+import { Review } from "@/app/(home)/home/main_review";
 
 
 const Home = () => {
