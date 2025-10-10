@@ -13,76 +13,19 @@ import Filter from "./filter_element/filter";
 
 const Catalog:FC = observer(() => {
   const {Product_Store} = useStore()
-  const [productList, SetProductList] = useState<IProduct[]>(mockdata)
+  
+  
+  
   const [sizes, setSizes] = useState<Array<number>>([])
   const [colors, setColors] = useState<Array<number>>([])
+
+
 
   /*useEffect(()=>{
     setproductList(Product_Store.productList)
   },[Product_Store.productList])*/
 
-  /*useEffect (()=>{
-
-    //const arr:IProduct[] = 
-    
-    //Product_Store.FiltredByCategory(Product_Store.selectedCategory);
-    
-    //const sizesArr:Array<number> = [];
-    //const colorsArray: Array<number> = []
-    //const brandArr:Array<string> = [];
-
-    //Product_Store.FiltredByCategory(Product_Store.selectedCategory)
-
-
-    Store.ProductFiltredByCatagory.forEach((el:IProduct)=> {
-      brandArr.push(brandList[el.brand])
-
-      if(Store.SelectedBrand.length > 0) {
-        Store.SelectedBrand.forEach((brand:string)=>{
-          if(brand===brandList[el.brand]){
-            arr.push(el)
-            el.sizes?.forEach((size)=> {
-              if(typeof size[0] ===  "number"){
-                sizesArr.push(size[0])
-              }
-              if(typeof size[1] ===  "object"){
-                size[1].forEach(color => {
-                  colorsArray.push(color)
-                })    
-              };
-            }) 
-          }
-        })
-      } else {
-        arr.push(el)
-        el.sizes?.forEach((size)=> {
-          if(typeof size[0] ===  "number"){
-            sizesArr.push(size[0])
-          }
-          if(typeof size[1] ===  "object"){
-            size[1].forEach(color => {
-              colorsArray.push(color)
-            })    
-          };
-        }) 
-      }
-
-
-    })
-
-    //console.log(sizesArr)
-
-    const clearBrand = [...new Set(brandArr)] 
-    setBrands(clearBrand)
-
-    const clearSizes = [...new Set(sizesArr)] 
-    setSizes(clearSizes.sort())
-
-    const clearColors = [...new Set(colorsArray)] 
-    setColors(clearColors.sort())
-
-    //SetProductList(arr)
-  },[Product_Store.selectedCategory])*/
+  
 
 
   useEffect(()=>{
