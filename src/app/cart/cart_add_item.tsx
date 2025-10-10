@@ -1,7 +1,7 @@
 'use client'
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { data, IProduct, brandList, categoryList, ColorName, ColorRGB } from '@/api/db';
+import { mockdata, IProduct, ColorName, } from '@/api/db';
 import { observer } from 'mobx-react-lite';
 import { IcartItemParam } from "@/store/IUser";
 //import Product_card  from '@/components/Product_card';
@@ -17,8 +17,8 @@ const Add_item:FC<Props> = observer(({item, params={size:0, color:0, count:0}, i
   const {Store} = useStore();
   const [sizeList, setSizeList] = useState<Array<number>>([]);
   const [selectedSize, setSelectedSize] = useState<number>(params.size);
-  const [isSizeSelected, setIsSizeSelected] = useState(true);
-  const [colorList, setColorList] = useState<any>([]);
+  
+  const [colorList, setColorList] = useState<number[]>([]);
   const [isCountDissable, setIsCountDissable] = useState(true);
   const [selectedColor, setSelectedColor] = useState<number>(params.color);
   const [Count, setCount] = useState<number>(params.count);
@@ -32,8 +32,8 @@ const Add_item:FC<Props> = observer(({item, params={size:0, color:0, count:0}, i
     })
     setSizeList(tempArr)
 
-
-  },[])
+    
+  },[item.sizes])
 
   useEffect(()=>{
     if(typeof selectedSize === "number") setIsSizeSelected(false)
@@ -49,7 +49,7 @@ const Add_item:FC<Props> = observer(({item, params={size:0, color:0, count:0}, i
     //if(!isSizeSelected&&!isCountDissable){
     Store.updateParamsInDB(itemIndex, params, index)
     //}
-  },[Count, selectedColor, selectedSize])
+  },[Count, selectedColor,Store, selectedSize])
 
 
 
