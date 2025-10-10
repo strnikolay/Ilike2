@@ -13,7 +13,7 @@ const Favourites:FC = observer(() => {
   useEffect(()=>{
       const tempArr:Array<IProduct> = []
       Store.user.fav.forEach((id)=>{
-        const el = data.find((el)=> el.id===id)
+        const el = mockdata.find((el)=> el.id===id)
         if(el){tempArr.push(el)}
       })
       //console.log(tempArr)
