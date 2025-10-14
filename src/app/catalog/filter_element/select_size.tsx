@@ -18,7 +18,7 @@ const SelectSize:FC<Props> = observer (({size}) => {
     } else {
       setSelected(false)
     }
-  },[Product_Store.SelectedSizes, size])
+  },[Product_Store.SelectedSizes])
 
   return (
     <div className="input-wrap">  

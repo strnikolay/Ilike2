@@ -9,7 +9,7 @@ import LoginForm from './Login_form';
 
 
 export const Popup = observer (() => {
-	const {Store} = useStore()
+	const {Store, Cart_Store} = useStore()
 
 	useEffect (()=>{
 		const auth =localStorage.getItem('user')
@@ -17,6 +17,7 @@ export const Popup = observer (() => {
 			Store.setAuth(true)
 			const newuser = JSON.parse(auth)
 			Store.setUser(newuser)
+			Cart_Store.CalcSummOfProductInCart()
 		}
 	})
 

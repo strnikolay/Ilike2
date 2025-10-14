@@ -1,13 +1,22 @@
+export interface IContact {
+    name:"string";
+    phone:"string";
+}
 
 export interface IUser {
     id: string;
     email: string;
-    password: string;    
-    phone: string;
+    password: string;
     company: string;
-    fav:Array<string>;
-    cart:Array<IcartItem>
+    contact:IContact[];
+    adress:string[];
+    orderHistory:string[];
+    fav:string[];
+    cart:IcartItem[];
 }
+
+
+
 
 export type Tcolor = number[];
 export type Tsize = number
@@ -37,5 +46,5 @@ export interface IcartItemParam {
 
 export interface IcartItem {
     id: string,
-    params: Array<IcartItemParam>  
+    params: IcartItemParam[]  
 }

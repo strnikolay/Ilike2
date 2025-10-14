@@ -1,0 +1,15 @@
+.review-wrap {
+    position: relative;
+}
+
+.review-wrap .background {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 103%;
+    height: 100%;
+    /*background: url('./best-back.png') no-repeat;
+    background-size: 110%;
+    background-position: center;*/
+    margin-top: 40px;
+}

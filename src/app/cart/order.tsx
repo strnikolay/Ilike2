@@ -7,12 +7,11 @@ import {IcartItem, IcartItemParam, IProduct} from "@/store/interfaces";
 import { observer } from 'mobx-react';
 import Cart_item from "./cart_item";
 import CartList from "./cart";
-import Order from "./order";
 //import Product_card  from '@/components/Product_card';
 
 
 
-const Cart:FC = observer(() => {
+const Order:FC = observer(() => {
   const {Store, Cart_Store} = useStore();
 
   useEffect(()=>{
@@ -20,10 +19,13 @@ const Cart:FC = observer(() => {
   },[])
 
   return (
-    <div className="">
-      {Cart_Store.isOrderStage?<Order/>:<CartList/>}
+    <div className="order-wrap container">
+      <button className="return-to-cart-btn" onClick={()=>Cart_Store.setIsOrderStage(false)}>Назад в корзину</button> 
+      <h1>Оформление заказа</h1>
+      <div className="contact">Контактное лицо:{/*Store.user.name},{Store.user.phone*/}</div>
+
     </div>
   )
 });
 
-export default (Cart);
+export default (Order);

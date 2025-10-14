@@ -2,9 +2,10 @@
 import "./favourites.css";
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
-import { mockdata, IProduct } from '@/api/db';
+import { mockdata} from '@/api/db';
 import { observer } from 'mobx-react';
 import Product_card  from '@/components/product/Product_card';
+import { IProduct } from "@/store/interfaces";
 
 const Favourites:FC = observer(() => {
   const {Store} = useStore();

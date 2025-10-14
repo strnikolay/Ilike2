@@ -2,8 +2,9 @@
 
 import { makeAutoObservable } from 'mobx';
 
-import {IcartItemParam} from "@/store/interfaces"
+import {IcartItem, IcartItemParam} from "@/store/interfaces"
 import { Store } from './store';
+import { mockdata } from '@/api/db';
 
 class cartStore {
   constructor() {
@@ -39,12 +40,17 @@ class cartStore {
     localStorage.setItem("user", JSON.stringify(tempUser))
   }
 
+
+  isParamsUpdate = false;
+  setIsParamsUpdate(bool: boolean) {this.isParamsUpdate = bool;}
+
   updateParamsInDB (itemIndex:number, params:IcartItemParam, paramsIndex:number){
     //console.log(params)
     const tempUser=Store.user
     tempUser.cart[itemIndex].params.splice(paramsIndex, 1, params)
     Store.setUser(tempUser)
     localStorage.setItem("user", JSON.stringify(tempUser))
+    this.setIsParamsUpdate(true)
   }
 
   deleteParamsInCartItem (itemIndex:number, paramsIndex:number) {
@@ -53,6 +59,28 @@ class cartStore {
     Store.setUser(tempUser)
     localStorage.setItem("user", JSON.stringify(tempUser))
   }
+
+  summInCart:number = 0;
+  setSummInCart(summ: number) {this.summInCart = summ;}
+
+  CalcSummOfProductInCart () {
+    let tempSumm:number = 0
+    Store.user.cart.forEach((product:IcartItem)=>{
+      if(product){
+        const productCost = mockdata.find((el)=>el.id === product.id)?.price
+        let productcount = 0
+        product.params.forEach((params:IcartItemParam)=>{
+          productcount = productcount + params.count
+        })
+        tempSumm = tempSumm + (productCost! * productcount)
+      }
+    })
+    //console.log(tempSumm)
+    this.setSummInCart(tempSumm)
+  }
+
+  isOrderStage = false;
+  setIsOrderStage(bool: boolean) {this.isOrderStage = bool;}
 
 }
 

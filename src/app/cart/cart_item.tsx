@@ -2,8 +2,8 @@
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
 import { brandList, categoryList} from '@/api/db';
-import {IProduct, IcartItemParam} from "@/store/interfaces";
-import { observer } from 'mobx-react-lite';
+import {IProduct, IcartItem, IcartItemParam} from "@/store/interfaces";
+import { observer } from 'mobx-react';
 import ParamsInProduct from "./ParamsInProduct";
 
 interface Props {
@@ -14,27 +14,36 @@ interface Props {
 const Cart_item:FC<Props> = observer(({item, itemIndex}) => {
   const {Store, Cart_Store} = useStore();
   const [itemParams, setItemParams] = useState<IcartItemParam[]>([]);
+  const [itemCostSumm, setItemCostSumm] = useState<number>(0);
+  const [isCountUpdate, setIsCountUpdate] = useState<boolean>(false);
   const [itemSumm, setItemSumm] = useState<number>(0);
  
   useEffect(()=>{
-    const tempParams = Store.user.cart.find((elInCart)=>item.id===elInCart.id)
-    console.log(tempParams?.params)
+    const tempParams:IcartItem|undefined = Store.user.cart.find((elInCart:IcartItem)=>item.id===elInCart.id)
+
     if(tempParams){
+      //console.log("params", tempParams.params[0].count)
       setItemParams(tempParams.params)
-    }  
-  },[Store.user.cart[itemIndex].params])
+    }
+    Cart_Store.setIsParamsUpdate(false)
+    //console.log("bpvtytybt", isCountUpdate)
+    setIsCountUpdate(true)
+  },[Cart_Store.isParamsUpdate])
 
   useEffect(()=>{
-    let tempsumm = 0
-    //console.log("сумма", tempsumm)
-    Store.user.cart[itemIndex].params.forEach((param)=>{
+    let tempCostSumm:number = 0
+    let tempSumm:number = 0
+    Store.user.cart[itemIndex].params.forEach((param:IcartItemParam)=>{
       if(param.count>0){
-        tempsumm = tempsumm + (item.price * param.count)
+        tempCostSumm = tempCostSumm + (item.price * param.count)
+        tempSumm = tempSumm + param.count
       }
     })
-    console.log("сумма", tempsumm)
-    setItemSumm(tempsumm)
-  },[Store.user.cart, itemParams])
+    
+    setItemCostSumm(tempCostSumm)
+    setItemSumm(tempSumm)
+    setIsCountUpdate(false)
+  },[isCountUpdate])
 
   return (
     <details className="cart-item">
@@ -43,12 +52,12 @@ const Cart_item:FC<Props> = observer(({item, itemIndex}) => {
           {item.id} {categoryList[item.cat-1]} {brandList[item.brand]}
         </div>
         <div>Цена за ед: {item.price}</div>
-        <div>Выбраное всего:</div>
-        <div>Сумма: {itemSumm}</div>
+        <div>Выбраное всего:{itemSumm}</div>
+        <div>Сумма: {itemCostSumm}</div>
       </summary>
       {itemParams.length>0?
         itemParams.map((params, index)=>
-          <ParamsInProduct key={index} item={item} params={params} itemIndex={itemIndex} paramsIndex={index}/>
+          <ParamsInProduct key={index} item={item} params={params} itemIndex={itemIndex} paramsIndex={index} />
         ):
         null
       }

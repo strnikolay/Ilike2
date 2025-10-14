@@ -24,7 +24,7 @@ const ParamsInProduct:FC<Props> = observer(({item, params, itemIndex, paramsInde
 
  
   useEffect(()=>{
-    console.log(selectedSize)
+    //console.log(selectedSize)
     const tempArr:number[] = []
     item.sizes?.forEach((size) => {
       tempArr.push(size.size)
@@ -38,8 +38,6 @@ const ParamsInProduct:FC<Props> = observer(({item, params, itemIndex, paramsInde
     //console.log(e.target.value)
     setSelectedSize(Number(e.target.value))
   }
-
-
 
   const selectColorHandler = (e:React.ChangeEvent<HTMLSelectElement>) =>{
     setSelectedColor(Number(e.target.value))
@@ -137,7 +135,7 @@ const ParamsInProduct:FC<Props> = observer(({item, params, itemIndex, paramsInde
           </label> 
         </div>
         <div>
-          Сумма: {item.price*Count!}
+          Сумма: {item.price*Count}
         </div>
 
 

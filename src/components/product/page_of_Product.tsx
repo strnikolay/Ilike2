@@ -5,9 +5,10 @@ import Image from 'next/image';
 import "./Product_card.css";
 //import { Carousel } from "react-responsive-carousel";
 //import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {brandList, categoryList, IProduct} from "@/api/db"
+import {brandList, categoryList} from "@/api/db"
 import { useStore } from "@/store/storeProvidert";
 import { observer } from 'mobx-react';
+import { IProduct } from '@/store/interfaces';
 
 
 interface Props {
@@ -69,7 +70,7 @@ const Product_page:FC<Props> = observer(({el, index}) => {
     return (
     <div key={index} className="product-card-wrap">
         <div className='title'>
-            {el.id} {brandList[el.brand]} {categoryList[el.cat-1].cat_title}
+            {el.id} {brandList[el.brand]} {categoryList[el.cat-1]}
         </div>
         <div className="image relative">
             <div className="images-add">

@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 
 export const Header: React.FC = observer(() => {
 	const router = useRouter();
-	const {Store} = useStore();
+	const {Store, Cart_Store} = useStore();
 	const [dropdown, setDropdown] = React.useState(false)
 	//const [mobilemenu, setMobilemenu] = React.useState(false)
 
@@ -83,7 +83,7 @@ export const Header: React.FC = observer(() => {
 				{Store.isAuth?
 					<Link href="/cart" className='cart-btn-wrap'>
 						<Image src="/header/cart-svg.svg" alt="iLikeOpt.ru" fill priority={false}/>
-						<div className='header-cart-sum'>17 600р</div>
+						<div className='header-cart-sum'>{Cart_Store.summInCart}</div>
 					</Link>
 					:null
 				}

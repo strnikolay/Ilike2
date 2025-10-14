@@ -1,12 +1,13 @@
 'use client'
 
-import React, {useEffect} from 'react';
+import React from 'react';
 import { categoryList } from '@/api/db';
 import { useStore} from '@/store/storeProvidert'
+import { observer } from 'mobx-react';
 
 
 
-export const Category_select: React.FC = () => {
+export const Category_select: React.FC = observer(() => {
   const {Product_Store} = useStore()
 
   /*useEffect(()=>{
@@ -27,4 +28,4 @@ export const Category_select: React.FC = () => {
       ))}           
   </div>
   );
-};
+});

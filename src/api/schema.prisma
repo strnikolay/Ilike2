@@ -1,0 +1,49 @@
+datasource db {
+    provider  = "postgresql"
+    url       = env("DATABASE_URL") // uses connection pooling
+}
+
+generator client {
+    provider = "prisma-client-js"
+    output   = "./lib/generated/prisma"
+}
+
+model User {
+    id Int @id @default(autoincrement())
+
+    email String @unique
+    pass String
+    company String
+
+    Cart Cart[]
+}
+
+model Cart {
+    id Int @id @default(autoincrement())
+    
+    user User @relation(fields: [userId], references: [id])
+    userId Int
+}
+
+model Category {
+    id Int @id @default(autoincrement())
+    name String @unique
+    products Product[]
+}
+
+model Product {
+    id Int @id @default(autoincrement())
+
+    cat Category @relation(fields: [categoryId], references: [id])
+    categoryId Int
+
+    totalMount Int @default(0)
+
+    brand Int
+    desc String
+    img String
+    sticker String
+    price Int
+    count Int
+    //sizes sizes[]
+}
