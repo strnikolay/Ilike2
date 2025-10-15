@@ -1,7 +1,6 @@
 'use client'
 
 import React, {useState, ChangeEvent} from 'react';
-import { categoryList } from '@/api/db';
 import { useStore} from '@/store/storeProvidert'
 import { observer } from 'mobx-react';
 import { IContact } from '@/store/interfaces';
@@ -24,13 +23,13 @@ export const Edit_name: React.FC<Props> = observer(({index, contact}) => {
 
   const [phone, setPhone] = useState<string>(contact.phone)
   const [isPhoneEdit, setISNameEdit] = useState(false)
-  const phoneEditHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const phoneEditHandler = (e: ChangeEvent<HTMLInputElement>) => {  
     setPhone(e.target.value)
   }
 
-  /*useEffect(()=>{
-    
-  },[])*/
+  useEffect(()=>{
+    console.log(index)
+  },[])
 
 
   return (
