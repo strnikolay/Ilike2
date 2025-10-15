@@ -5,7 +5,7 @@ import Image from 'next/image';
 import "./Product_card.css";
 //import { Carousel } from "react-responsive-carousel";
 //import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {brandList, categoryList, IProduct} from "@/api/db";
+import {brandList, categoryList} from "@/api/db";
 import {IProduct} from "@/store/interfaces";
 import { useStore } from "@/store/storeProvidert";
 import { observer } from 'mobx-react';
