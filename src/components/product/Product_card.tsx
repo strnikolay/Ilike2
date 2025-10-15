@@ -33,8 +33,8 @@ const Product_card:FC<Props> = observer(({el, index}) => {
     },[Store.user.fav, el])
 
     useEffect(()=>{
-        const findItem = Store.user.cart.find((elInCart)=> elInCart.id === el.id)
-        if(findItem){
+        //const findItem = Store.user.cart.find((elInCart)=> elInCart.id === el.id)
+        if( Store.user.cart&&Store.user.cart.find((elInCart)=> elInCart.id === el.id)){
             setIsInCart(true)
         } else {
             setIsInCart(false)
