@@ -70,7 +70,7 @@ const Product_page:FC<Props> = observer(({el, index}) => {
     return (
     <div key={index} className="product-card-wrap">
         <div className='title'>
-            {el.id} {brandList[el.brand]} {categoryList[el.cat-1].cat_title}
+            {el.id} {brandList[el.brand]} {categoryList[el.cat-1]}
         </div>
         <div className="image relative">
             <div className="images-add">
