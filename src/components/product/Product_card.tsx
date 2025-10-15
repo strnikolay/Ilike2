@@ -25,7 +25,7 @@ const Product_card:FC<Props> = observer(({el, index}) => {
     //console.log(el)
 
     useEffect(()=>{
-        if(Store.user.fav.includes(el.id)){
+        if(Store.user.fav&&Store.user.fav.includes(el.id)){
             setIsFav(true)
         } else {
             setIsFav(false)
