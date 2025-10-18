@@ -3,7 +3,7 @@ import "./cart.css";
 import {FC, useEffect, useState } from "react";
 import { useStore } from "@/store/storeProvidert";
 import { mockdata} from '@/api/db';
-import {IcartItem, IcartItemParam, IProduct} from "@/store/interfaces";
+import {IcartItem, IProduct} from "@/store/interfaces";
 import { observer } from 'mobx-react';
 import Cart_item from "./cart_item";
 //import Product_card  from '@/components/Product_card';
@@ -13,7 +13,7 @@ import Cart_item from "./cart_item";
 const CartList:FC = observer(() => {
   const {Store, Cart_Store} = useStore();
   const [cartList, setCartList] = useState<Array<IProduct>>([])
-  const [summ, setSumm] = useState<number>(0)
+  //const [summ, setSumm] = useState<number>(0)
  
   useEffect(()=>{
       const tempArr:IProduct[] = []
@@ -27,7 +27,7 @@ const CartList:FC = observer(() => {
 
   useEffect(()=>{
     Cart_Store.CalcSummOfProductInCart();
-  },[Cart_Store.isParamsUpdate])
+  },[Cart_Store.isParamsUpdate,Cart_Store])
 
   return (
     <div className="cart-list-wrap container">
