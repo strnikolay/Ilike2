@@ -1,11 +1,8 @@
 'use client'
 import "./cart.css";
-import {FC, useEffect, useState } from "react";
+import {FC, useEffect} from "react";
 import { useStore } from "@/store/storeProvidert";
-import { mockdata} from '@/api/db';
-import {IcartItem, IcartItemParam, IProduct} from "@/store/interfaces";
 import { observer } from 'mobx-react';
-import Cart_item from "./cart_item";
 import CartList from "./cart";
 import Order from "./order";
 //import Product_card  from '@/components/Product_card';
@@ -13,7 +10,7 @@ import Order from "./order";
 
 
 const Cart:FC = observer(() => {
-  const {Store, Cart_Store} = useStore();
+  const {Cart_Store} = useStore();
 
   useEffect(()=>{
 
