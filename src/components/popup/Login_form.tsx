@@ -13,10 +13,10 @@ export default function LoginForm () {
 
 
 	return (
-	<div className="login-wrapper">
-		<div className='background' onClick={() => Store.SetPopup('')}></div>
+		<div className="login-popup-wrapper">
+		<div className='popup-background' onClick={() => Store.SetPopup('')}></div>
 		<div className="divshadow bounceIn">
-			<button onClick={() => Store.SetPopup('')} className="close" />
+			<button onClick={() => Store.SetPopup('')} className="close-popup-btn" />
 			
 			<h3><i/>Войти / Зарегистрироваться <i/></h3>
 				 
@@ -57,8 +57,7 @@ export default function LoginForm () {
 					</div>
 			</form>
 			<div className="form-footer">
-					<Link href="/#" className="plus_btn">
-					</Link>
+					<Link href="/#" className="plus_btn"></Link>
 					
 					<Link className="text-underline" href="/#">
 						Зарегистрироваться 
