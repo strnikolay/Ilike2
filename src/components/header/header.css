@@ -28,57 +28,50 @@
 .header-btn-wrap {
     width: 29rem;
     display: flex;
+}
 
-    .contact-wrapper {
+.header-btn-wrap .contact-wrapper {
         display: flex;
         align-items: center;
-
-        .phone-icon {
+}
+.header-btn-wrap .phone-icon {
             position: relative;
             width: 4.2rem;
             height: 4.2rem;
             border-radius: .5rem;
             background-color: #D50B7A;
             margin-right: .5rem;
-            img {
+}            
+.header-btn-wrap .phone-icon img {
                 padding: .7rem;
-            }
-        }
+}
 
-        .contact-content{
+
+.header .contact-content{
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
+}
 
-            .phone-number {
+.header .phone-number {
                 color: #4AB7AE;
                 display: flex;
                 align-items: center;
                 font-size: 1.8rem;
-
-                .grey-arrow-down {
+}
+.header .phone-number .grey-arrow-down {
                     margin-left: 0.5rem;
                     width: 1.2rem;
                     height: 0.8rem;
                     background: no-repeat url(../../../public/header/grey-arrow-down.svg) ;
                     background-size: contain;
-                }
-            }
+}
+            
 
-            .openrecall {
+.header .contact-content .openrecall {
                 margin-top: 0.4rem;
                 font-size: 1.4rem;
-            }
-
-        }
-
-        
-
-    }
-
-
-
 }
 
 .dropdown-menu {
