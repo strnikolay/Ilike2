@@ -1,4 +1,4 @@
-.login-wrapper {
+.login-popup-wrapper {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -12,16 +12,17 @@
          -o-transition: opacity .5s ease-in-out;
             transition: opacity .5s ease-in-out;
   */
+}
 
-  .background {
+.popup-background {
     position: fixed;
     z-index: 10;
     width: 100vw;
     height: 100vh;
     background-color: #000000cb;
-  }
+}
 
-  .divshadow {
+.login-popup-wrapper .divshadow {
     width: 40rem;
     opacity: 1;
     position: absolute;
@@ -33,8 +34,9 @@
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
+}    
 
-    .close {    
+.close-popup-btn {    
       width: 10px;
       height: 10px;
       position: absolute;
@@ -45,13 +47,14 @@
       background-image: url("../../../public/login/x.svg");
       background-repeat: no-repeat;
       background-position: center;
-    }
+}
 
-    h3 {
+.login-popup-wrapper h3 {
       text-align: center;
       font-size: 1.6rem; 
+}      
 
-      i {
+.login-popup-wrapper h3 i {
         display: inline-block;
         height: 2px;
         padding-top: 12px;
@@ -60,41 +63,38 @@
         width: 50px;
         border-top: 1px solid #adadad;
         margin: 0px 12px;
-      }
+}
       
       
-    }
 
-    .text {
+
+.login-popup-wrapper .text {
       margin: 20px 0;
       display: flex;
       font-size: 1.4rem;
+}
 
-      .text-icon {
+.login-popup-wrapper .text .text-icon {
           margin-right: 15px;
           position: relative;
           width: 9.5rem;
           height: 5rem;
-      }
-    }
+}
 
-
-  }
-
-  .bounceIn {
+.bounceIn {
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
-  }
 }
 
 
-.input-group {
+
+.login-popup-wrapper .input-group {
     height: 40px;
     display: flex;
     margin: 15px;
 }
 
-.button-wrap {
+.login-popup-wrapper .button-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,13 +102,13 @@
 
 
 
-.form-control {
+.login-popup-wrapper .form-control {
     width: 100%;
     border: 1px solid #4ab7ae;
     border-radius: 0 10px 10px 0;
 }
 
-.user {
+.login-popup-wrapper .user {
     height: 100%;
     width: 40px;
     background-image: url("../../../public/login/user.svg");
@@ -118,7 +118,7 @@
     border-radius: 10px 0 0 10px;
 }
 
-.pass {
+.login-popup-wrapper .pass {
     height: 100%;
     width: 40px;
     background-image: url("../../../public/login/password.svg");
@@ -128,7 +128,7 @@
     border-radius: 10px 0 0 10px;
 }
 
-.btn-submit {
+.login-popup-wrapper .btn-submit {
     border: 0;
     color: #fff;
     width: 150px;
@@ -138,11 +138,11 @@
     border-radius: 10px;
 }
 
-.form-footer {
+.login-popup-wrapper .form-footer {
     display: flex;
 }
 
-.plus_btn {
+.login-popup-wrapper .plus_btn {
     width: 20px;
     height: 20px;
     background-image: url("../../../public/login/plus-square.svg");
