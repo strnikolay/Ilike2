@@ -30,7 +30,7 @@ const ParamsInProduct:FC<Props> = observer(({item, params, itemIndex, paramsInde
       tempArr.push(size.size)
     })
     setSizeList(tempArr)
-  },[item.sizes])
+  })
 
   const selectSizeHandler = (
     e:React.ChangeEvent<HTMLSelectElement>
@@ -59,7 +59,7 @@ const ParamsInProduct:FC<Props> = observer(({item, params, itemIndex, paramsInde
     if(selectedSize!==undefined&&selectedColor!==undefined){
       Cart_Store.updateParamsInDB(itemIndex, tempParams, paramsIndex)
     }
-  },[selectedSize, selectedColor, Count])
+  },[selectedSize, selectedColor, Count,  Cart_Store, itemIndex, paramsIndex])
 
 
 
